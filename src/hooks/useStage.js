@@ -22,7 +22,7 @@ export const useStage = (player, resetPlayer) => {
         const updateStage = prevStage => {
             //First flush the stage
             const newStage = prevStage.map(row =>
-                row.map(cell => (cell[1] === 'clear' ? [0, 'clear'] : cell)),
+                row.map(cell => (cell[1] === 'clear' ? [0, 'clear'] : cell))
             );
 
             //Then draw the tetromino
@@ -38,7 +38,7 @@ export const useStage = (player, resetPlayer) => {
                 });
             });
             //Check if collided
-            if(player.collided){
+            if(player.collided){                
                 resetPlayer();
                 return sweepRows(newStage);
             }
